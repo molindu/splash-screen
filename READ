@@ -1,0 +1,47 @@
+First install ( npm i react-native-splash-screen )
+add below code to android/settings.gradle
+      include ':react-native-splash-screen'   
+      project(':react-native-splash-screen').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-splash-        screen/android')
+
+      add below code to android/app/build.gradle
+             implementation project(':react-native-splash-screen')
+      
+      now goto Mainactivity.java file Up date 
+            import android.os.Bundle; // here
+      import com.facebook.react.ReactActivity;
+      // react-native-splash-screen >= 0.3.1
+      import org.devio.rn.splashscreen.SplashScreen; // here
+      // react-native-splash-screen < 0.3.1
+      import com.cboy.rn.splashscreen.SplashScreen; // here
+      
+      public class MainActivity extends ReactActivity {
+         @Override
+          protected void onCreate(Bundle savedInstanceState) {
+              SplashScreen.show(this);  // here
+              super.onCreate(savedInstanceState);
+          }
+    // ...other code
+    }
+
+Create a file called launch_screen.xml in app/src/main/res/layout and paste that code
+      <?xml version="1.0" encoding="utf-8"?>
+        <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            android:orientation="vertical" android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <ImageView android:layout_width="match_parent" android:layout_height="match_parent" android:src="@drawable/launch_screen" android:scaleType="centerCrop" />
+        </RelativeLayout>
+
+goto ..\hello\android\app\src\main\res\values\styles.xml and edit exsiting code like that
+
+      <item name="android:editTextBackground">@drawable/rn_edit_text_material</item>
+                                  To
+      This:
+      <item name="android:editTextBackground">@layout/launch_screen</item>
+
+paste drawable files to ../main/res/
+
+goto App.tsx and add
+      import SplashScreen from 'react-native-splash-screen';
+       useEffect(() => {
+    if (Platform.OS === 'android') SplashScreen.hide();
+  }, [])
