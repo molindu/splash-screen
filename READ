@@ -31,12 +31,6 @@ Create a file called launch_screen.xml in app/src/main/res/layout and paste that
             <ImageView android:layout_width="match_parent" android:layout_height="match_parent" android:src="@drawable/launch_screen" android:scaleType="centerCrop" />
         </RelativeLayout>
 
-goto ..\hello\android\app\src\main\res\values\styles.xml and edit exsiting code like that
-
-      <item name="android:editTextBackground">@drawable/rn_edit_text_material</item>
-                                  To
-      This:
-      <item name="android:editTextBackground">@layout/launch_screen</item>
 
 paste drawable files to ../main/res/
 
