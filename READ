@@ -15,10 +15,10 @@
       //import com.cboy.rn.splashscreen.SplashScreen; // here
       
       public class MainActivity extends ReactActivity {
-         @Override
-          protected void onCreate(Bundle savedInstanceState) {
+         @Override//here
+          protected void onCreate(Bundle savedInstanceState) { //here
               SplashScreen.show(this);  // here
-              super.onCreate(savedInstanceState);
+              super.onCreate(savedInstanceState); //here
           }
     // ...other code
     }
