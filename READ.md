@@ -1,8 +1,9 @@
 # First install ( npm i react-native-splash-screen )
 # add below code to android/settings.gradle
+```jvm
       include ':react-native-splash-screen'   
-      project(':react-native-splash-screen').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-splash-        screen/android')
-
+      project(':react-native-splash-screen').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-splash-screen/android')
+```
 # add below code to android/app/build.gradle
              implementation project(':react-native-splash-screen')
       
