@@ -9,7 +9,7 @@
              implementation project(':react-native-splash-screen')
 ```
 # now goto Mainactivity.java file Up date 
-```
+```java
       import android.os.Bundle; // here
       import com.facebook.react.ReactActivity;
       // react-native-splash-screen >= 0.3.1
@@ -40,8 +40,8 @@
 
 # goto App.tsx and add
 ```tsx
-      import SplashScreen from 'react-native-splash-screen';
-       useEffect(() => {
-    if (Platform.OS === 'android') SplashScreen.hide();
-  }, [])
+import SplashScreen from 'react-native-splash-screen';
+useEffect(() => {
+      if (Platform.OS === 'android') SplashScreen.hide();
+}, [])
 ```
